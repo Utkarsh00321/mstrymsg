@@ -43,14 +43,14 @@ export async function POST(request: Request) {
         const hashedPassword = await bcrypt.hash(password, 10);
         existingUserByEmail.password = hashedPassword;
         existingUserByEmail.verifyCode = verifyCode;
-        existingUserByEmail.verifyCodeExpiry = new Date(Date.now() + 3600);
+        existingUserByEmail.verifyCodeExpiry = new Date(Date.now() + 360000);
         await existingUserByEmail.save();
       }
     }
     // If user is not found means he does not exist in database. Create a new user and save to
     else {
       const hashedPassword = await bcrypt.hash(password, 10);
-      const expiryDate = new Date(Date.now() + 3600);
+      const expiryDate = new Date(Date.now() + 360000);
 
       const newUser = new UserModel({
         username,
