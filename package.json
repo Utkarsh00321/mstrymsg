@@ -9,14 +9,18 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@ai-sdk/google": "^0.0.27",
+    "@google/generative-ai": "^0.14.1",
     "@react-email/components": "0.0.19",
     "@react-email/font": "0.0.6",
     "@react-email/head": "0.0.9",
+    "ai": "^3.2.22",
     "bcrypt": "^5.1.1",
     "bcryptjs": "^2.4.3",
     "mongoose": "^8.4.1",
     "next": "14.2.3",
     "next-auth": "^4.24.5",
+    "openai": "^4.52.7",
     "react": "^18",
     "react-dom": "^18",
     "react-email": "^2.1.4",
