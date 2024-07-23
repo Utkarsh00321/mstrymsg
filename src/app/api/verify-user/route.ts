@@ -6,7 +6,7 @@ import UserModel from "@/model/User";
 
 
 export async function POST(req:Request) {
-    console.log("Recieved post request at /verify-user")
+    
     await dbConnect();
 
     try {
