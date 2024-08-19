@@ -97,9 +97,10 @@ export default function SignUpForm() {
     }
   };
 
+
   return (
     <section className=''>
-    <div className="flex justify-center items-center min-h-screen bg-gray-800">
+    <div className="flex justify-center items-center min-h-screen bg-slate-50">
       <div className="w-full max-w-md p-8 space-y-8 bg-white rounded-lg shadow-md">
         <div className="text-center">
           <h1 className="text-2xl font-extrabold tracking-tight lg:text-3xl mb-2">
@@ -145,7 +146,7 @@ export default function SignUpForm() {
                 <FormItem>
                   <FormLabel>Email</FormLabel>
                   <Input {...field} name="email" />
-                  <p className='text-muted text-gray-600 text-sm'>We will send you a verification code</p>
+                  <p className='text-muted text-slate-700 text-xs'>We will send you a verification code</p>
                   <FormMessage />
                 </FormItem>
               )}

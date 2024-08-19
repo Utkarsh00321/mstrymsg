@@ -4,6 +4,11 @@ import bcrypt from 'bcryptjs'; // Importing bcryptjs for password hashing and co
 import dbConnect from '@/lib/dbConnect'; // Importing the database connection utility
 import UserModel from '@/model/User'; // Importing the User model
 
+import NextAuth from "next-auth"
+import GitHub from "next-auth/providers/github";
+import Google from "next-auth/providers/google"
+
+
 // Exporting the NextAuth configuration object
 export const authOptions: NextAuthOptions = {
   providers: [
@@ -45,6 +50,14 @@ export const authOptions: NextAuthOptions = {
           throw new Error(err); // Throw any other errors encountered
         }
       },
+    }),
+    GitHub({
+      clientId: process.env.GITHUB_CLIENT_ID!,
+      clientSecret: process.env.GITHUB_CLIENT_SECRET!,
+    }),
+    Google({
+      clientId: process.env.GOOGLE_CLIENT_ID!,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
     }),
   ],
   callbacks: {
